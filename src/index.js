@@ -24,11 +24,15 @@ router.get('/favicon.ico', function *(){
   this.body = ''
 })
 
+app.use(function *(next){
+  console.log('httponly_cookie Cookie?')
+  console.dir(this.cookies.get('httponly_cookie'), {colors:true, depth:5, hidden:true})
+  yield next
+})
+
 app.use(router.routes())
 
 app.use(function *(){
-  console.log('httponly_cookie Cookie?')
-  console.dir(this.cookies.get('httponly_cookie'), {colors:true, depth:5, hidden:true})
   this.body = ReactDOMServer.renderToStaticMarkup(
     <html>
       <head>
