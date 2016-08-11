@@ -11,7 +11,7 @@ A simple POC used to prove that `httponly` cookies can be set via AJAX responses
 
 Then open http://localhost:3000 in browser.
  
-# How do use this
+# How to use this
 
 Once you have the "Hello World" page up and running, open your console and you *should* see the following: 
 
